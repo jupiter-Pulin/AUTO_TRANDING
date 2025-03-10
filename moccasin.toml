@@ -1,0 +1,41 @@
+[project]
+src = "src"
+out = "out"
+dot_env = ".env"
+default_network_name = "mainnet-fork"
+save_abi_path = "abis"
+
+[networks.contracts]
+usdc={abi="abis/usdc.json"}
+weth={abi="abis/weth.json"}
+aave_PoolAddressesProvider={abi='abis/aave_PoolAddressesProvider.json'}
+aave_Pool={abi='abis/aave_Pool.json'}
+aave_protocol_data_provider={abi='abis/aave_protocol_data_provider.json'}
+eth_price_feed={abi='abis/eth_price_feed.json'}
+usdc_price_feed={abi='abis/usdc_price_feed.json'}
+uniswap_v3_router={abi='abis/uniswap_v3_router.json'}
+uniswap_v3_quoter={abi='abis/uniswap_v3_quoter.json'}
+
+
+[networks.mainnet-fork]
+url = "$MAINNET_RPC_URL"
+fork = true
+is_zksync = false
+default_account_name = "defult"
+unsafe_password_file = "defult_password.txt"
+chain_id = 1
+explorer_uri = "https://api.etherscan.io/api"
+explorer_api_key = "$EXPLORER_API_KEY"
+
+[networks.mainnet-fork.contracts]
+weth = { address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" }
+usdc = { address = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" }
+aave_PoolAddressesProvider={address="0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e"}
+aave_Pool={address="0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"}
+aave_protocol_data_provider={address="0x41393e5e337606dc3821075Af65AeE84D7688CBD"}
+eth_price_feed={address="0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"}
+usdc_price_feed={address ="0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6"}
+uniswap_v3_router={address="0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45"}
+uniswap_v3_quoter={address='0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6'}
+
+# You can view all configuration options at https://cyfrin.github.io/moccasin/all_moccasin_toml_parameters.html
